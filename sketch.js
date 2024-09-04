@@ -9,7 +9,7 @@ let x2Speed = 2
 let y2Speed = 5
 let d2 = 30
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(800, 600);
 }
 
 function draw() {
@@ -23,22 +23,26 @@ function draw() {
   x1 = x1 + x1Speed; // adding a negative xSpeed *decreases* x, right?
   
   // same as above, but for the top and bottom of the canvas
-  if (y1 > width || y1 < 0) {
+  if (y1 > height || y1 < 0) {
     y1Speed = y1Speed * -1;  
   }
   y1 = y1 + y1Speed;
 
+  fill("Yellow")
+  
   ellipse(x1, y1, d1);
 
   if (x2 > width || x2 < 0) {
     x2Speed = x2Speed * -1; 
   }
   x2 = x2 + x2Speed;
-  if (y2 > width || y2 < 0) {
+  if (y2 > height || y2 < 0) {
     y2Speed = y2Speed * -1;
   }
   y2 = y2 + y2Speed
 
+  fill("Pink")
+  
   rect(x2, y2, d2);
 
 }
