@@ -3,17 +3,18 @@ let y1 = 0;       // y position of the ball
 let x1Speed = 3;  // speed in X direction
 let y1Speed = 7; // speed in Y direction
 let d1 = 20;      // diameter of the ball
-let x2 = 50
-let y2 = 20
-let x2Speed = 2
-let y2Speed = 5
-let d2 = 30
+let x2 = 50 // x position of rectangle
+let y2 = 20 // y position of rectangle
+let x2Speed = 2 // speed in x direction
+let y2Speed = 5 // speed in y direction
+let d2 = 60 // size of rectangle
+
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(220); // try commenting this out!
+  background(0); // try commenting this out!
  
   // if x hits the right side or the left side of the canvas,
   // switch directions...
@@ -28,21 +29,25 @@ function draw() {
   }
   y1 = y1 + y1Speed;
 
-  fill("Yellow")
-  
-  ellipse(x1, y1, d1);
 
+
+  ellipse(x1, y1, d1);
+// same as ellipse but for rectangle 
   if (x2 > width || x2 < 0) {
     x2Speed = x2Speed * -1; 
   }
   x2 = x2 + x2Speed;
   if (y2 > height || y2 < 0) {
     y2Speed = y2Speed * -1;
+  
   }
   y2 = y2 + y2Speed
-
-  fill("Pink")
   
   rect(x2, y2, d2);
 
+}
+function keyIsPressed(){
+  if (keyCode == UP_ARROW){
+    background(255);
+  }
 }
