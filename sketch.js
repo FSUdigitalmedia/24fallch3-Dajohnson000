@@ -15,6 +15,7 @@ function setup() {
 
 function draw() {
   background(0); // try commenting this out!
+  
  
   // if x hits the right side or the left side of the canvas,
   // switch directions...
@@ -46,8 +47,15 @@ function draw() {
   rect(x2, y2, d2);
 
 }
-function keyIsPressed(){
+function keyPressed(){
   if (keyCode == UP_ARROW){
-    background(255);
+    fill(50,50,50);
   }
+  if (keyCode == DOWN_ARROW){
+    fill(255,255,255);
+  }
+}
+function mousePressed(){
+  console.log("hello")
+  fill(random([0], [255]),random([0], [255]),random([0], [255]))
 }
